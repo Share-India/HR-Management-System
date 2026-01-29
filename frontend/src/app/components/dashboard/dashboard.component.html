@@ -1,0 +1,13 @@
+<div class="dashboard-container">
+    <nav class="sidebar">
+        <div class="logo">HR System</div>
+        <ul>
+            <li><a routerLink="/employees" routerLinkActive="active">Employees</a></li>
+            <li><a routerLink="/resigned-employees" routerLinkActive="active">Resigned Employees</a></li>
+            <li><a (click)="logout()">Logout</a></li>
+        </ul>
+    </nav>
+    <main class="content">
+        <router-outlet></router-outlet>
+    </main>
+</div>

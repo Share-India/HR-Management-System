@@ -1,0 +1,37 @@
+<div class="header-actions">
+    <h2>Employee Records</h2>
+    <a routerLink="/employees/new" class="btn btn-primary">Add Employee</a>
+</div>
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Designation</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emp of employees" (click)="navigateToDetail(emp.id)" class="clickable-row">
+                <td>{{ emp.employeeCode }}</td>
+                <td>{{ emp.firstName }} {{ emp.lastName }}</td>
+                <td>{{ emp.department }}</td>
+                <td>{{ emp.designation }}</td>
+                <td>{{ emp.email }}</td>
+                <td><span class="status-badge" [class]="emp.status?.toLowerCase() || 'unknown'">{{ emp.status || 'N/A'
+                        }}</span></td>
+                <td>
+                    <button (click)="deleteEmployee($event, emp.id)" class="btn btn-sm btn-danger">Delete</button>
+                </td>
+            </tr>
+            <tr *ngIf="employees.length === 0">
+                <td colspan="7" class="no-data">No employees found.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
