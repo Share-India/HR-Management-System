@@ -34,22 +34,30 @@ buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.properties
 
-# Styles
-.sass-cache/
-.csslintrc
-.editorconfig
+# Gradle
+.gradle/
+build/
+gradle/
+gradlew
+gradlew.bat
 
-# Dependencies
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# VS Code
+.vscode/
+
+# Node.js
 node_modules/
 dist/
+npm-debug.log
+yarn-error.log
+package-lock.json
 
-# IDEs
-.idea/
-.vscode/
-*.iml
-*.ipr
-*.iws
-
-# OS
-.DS_Store
-Thumbs.db
+# Angular
+.angular/
+.editorconfig
+.cache/
